@@ -1,6 +1,6 @@
 auths:
   public_v2:
-    community: snmp4clxs
+    community: clxs
     security_level: noAuthNoPriv
     auth_protocol: MD5
     priv_protocol: DES
@@ -12,6 +12,10 @@ modules:
     - 1.3.6.1.2.1.31.1.1
     get:
     - 1.3.6.1.2.1.1.3.0
+    - 1.3.6.1.4.1.12356.101.4.1.3.0
+    - 1.3.6.1.4.1.12356.101.4.1.4.0
+    - 1.3.6.1.4.1.12356.101.4.1.6.0
+    - 1.3.6.1.4.1.12356.101.4.1.8.0
     metrics:
     - name: sysUpTime
       oid: 1.3.6.1.2.1.1.3
@@ -1263,3 +1267,19 @@ modules:
         labelname: ifName
         oid: 1.3.6.1.2.1.31.1.1.1.1
         type: DisplayString
+    - name: fgSysCpuUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.3
+      type: gauge
+      help: Current CPU usage (percentage) - 1.3.6.1.4.1.12356.101.4.1.3
+    - name: fgSysMemUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.4
+      type: gauge
+      help: Current memory utilization (percentage) - 1.3.6.1.4.1.12356.101.4.1.4
+    - name: fgSysDiskUsage
+      oid: 1.3.6.1.4.1.12356.101.4.1.6
+      type: gauge
+      help: Current hard disk usage (MB), if disk is present - 1.3.6.1.4.1.12356.101.4.1.6
+    - name: fgSysSesCount
+      oid: 1.3.6.1.4.1.12356.101.4.1.8
+      type: gauge
+      help: Number of active sessions on the device - 1.3.6.1.4.1.12356.101.4.1.8
