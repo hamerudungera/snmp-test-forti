@@ -1,0 +1,4 @@
+- name: forti-test-snmp
+  address: 10.3.1.1:161
+  module: fortinet
+  auth: public_v2
